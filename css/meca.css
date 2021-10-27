@@ -8,7 +8,7 @@ body{
   background-image: url("../img/fondo.jpg");
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   font-family: sans-serif;
 }
 h1{
@@ -22,6 +22,7 @@ h1{
   margin: auto;
   border: 1px solid white;
   position: relative;
+  border-radius: 10px;
 }
 
 /*Reglas para las palabras que vuelan*/

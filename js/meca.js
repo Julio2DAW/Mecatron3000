@@ -6,6 +6,7 @@
 **/
 
 'use strict'
+
 class Juego {
   constructor() {
     this.vista = new Vista()
@@ -15,6 +16,7 @@ class Juego {
     this.divPrincipal = null
     window.onload = this.iniciar.bind(this)
   }
+
   /**
     Pone en marcha el juego
   **/
@@ -36,18 +38,38 @@ class Vista {
   constructor(){
     this.div = null
   }
+
   /**
     Dibuja el area del juego
-    @param divPrincipal (HTMLDivElement) Div en el que dibuja el juego
+    @param palabra {String} la nueva palabra
   */
-  dibujar(divPrincipal, palabra){
+  dibujar(palabra){
     // <div class=palabra>Meca</div>
     let div = document.createElement('div')
-    divPrincipal.appendChild(div)
+    this.div.appendChild(div)
     div.appendChild(document.createTextNode(palabra))
     div.classList.add('palabra')
     div.style.top = '0px'
     div.style.left = Math.floor(Math.random() * 85) + '%'
+  }
+
+  /**
+    Mueve las palabras del juego
+  **/
+  moverPalabras(){
+    //Buscar todas las palabras del divPrincipal
+    let palabras = this.div.querySelectorAll('.palabra')
+    console.log(palabras)
+
+    //Para cada palabra, aumento su atributo top
+    for(let palabra of palabras){
+      let top = parseInt(palabra.style.top)
+      top += 5
+      palabra.style.top = `${top}px`
+    }
+
+    //TODO: Si ha llegado al suelo...
+
   }
 }
 /**
