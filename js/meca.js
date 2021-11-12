@@ -8,6 +8,9 @@
 'use strict'
 
 class Juego {
+  /** 
+   *  Constructor de la clase juego
+  **/
   constructor() {
     this.vista = new Vista()
     this.modelo = new Modelo()
@@ -81,6 +84,7 @@ class Modelo {
   }
   /**
     Devuelve una nueva palabra
+    Devuelve aleatoriamente un elemento de la array de palabras
     @return {String} Palabra generada
   **/
   crearPalabra(){
